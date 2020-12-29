@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>hola</title>
+    <script>
+        // 1. Composite function
+        const rokket = (a) => {
+            return (b) => {
+                return (c) => {
+                    return (a * b * c)
+                }
+            }
+        }
+        console.log(rokket(2)(5)(3))
+        console.log(rokket(4)(2)(2))
+        console.log(rokket(8)(2)(1))
+
+
+        //============================================================
+
+
+
+        // 2. Longest string
+        const list = ['best', 'company', 'ever'];
+        const rokket = (string) => {
+            string.sort((a, b) => {
+                return b.length - a.length;
+            })
+            return string[0]
+        }
+        console.log(rokket(list));
+
+
+
+        // //============================================================
+
+
+
+        // 3. String repetition
+        const rokket = (a, n) => {
+            let str = [];
+            for (let i = 0; i <= n; i++) {
+                str.push(a)
+            }
+            return str.join("")
+        }
+        console.log(rokket('node', 5)) // this outputs 'nodenodenodenodenode'
+
+
+
+        //============================================================
+
+
+
+        // 4. Only last names
+        const contacts = [
+            { firstName: 'Juanito', lastName: 'Rokket' },
+            { firstName: 'James', lastName: 'Bond' },
+            { firstName: 'Harry', lastName: 'Potter' }
+        ]
+
+        const rokket = (obj) => {
+
+            let arr = obj.map(el => el.lastName)
+
+            return arr
+        }
+
+        console.log("final", rokket(contacts))
+
+
+        // //============================================================
+
+
+
+        // 5. Unique numbers
+        const rokket = (a, b) => {
+            const arrConcat = a.concat(b)
+            const arrSort = arrConcat.sort((a, b) => a - b);
+            const arr = [];
+            let aux;
+
+            for (let i = 0; i <= arrSort.length; i++) {
+                aux = arrSort[i + 1]
+                if (aux !== arrSort[i]) {
+                    arr.push(arrSort[i])
+                }
+            }
+            return arr;
+        }
+        console.log(rokket([1, 2, 5], [2, 1, 6])) //this outputs [1, 2, 5, 6]
+        console.log(rokket([1, 2, 3], [4, 5, 6])) // this outputs [1, 2, 3, 4, 5, 6]
+    </script>
+</head>
+
+<body>
+    <h1>Hola</h1>
+</body>
+
+</html>
+
+<!-- let abc;
+for(let i = 0; i <= list.length; i++) {
+    list[i].sort((a, b) => {
+        return a - b;
+    });
+} -->
